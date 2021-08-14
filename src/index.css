@@ -1,13 +1,55 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+
+
+/*
+Solamente preferencia personal pero me gusta establecer el font-size a 10px, de esa manera trabajar con medidas REM es mucho más sencillo :O
+
+--------
+
+Just my personal preference, but I enjoy setting the font-size to 62.5% which is equal to 10px.
+This allows me to work with REM units way more efficiently :D
+
+*/
+html{
+  font-size: 62.5%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/*
+   Quizás no utilice todos estas tipografías, pero de todas maneras me parecen bonitas y todavía no me puedo decidir :/
+
+   ---------------
+
+   Maybe I won´t end up using all these different fonts, but I find them very pretty and so I'm having a hard time choosing between them
+   We'll see how it goes :O
+*/
+
+@font-face {
+  font-family: "Peristyle";
+  src: local("Peristyle"), url("./fonts/Peristyle/Peristyle-Bold.otf" format("opentype") );
+  font-weight: 700;
+}
+
+@font-face{
+  font-family: "Peristyle";
+  src: local("Peristyle"), url("./fonts/Peristyle/Peristyle-Light.otf" format("opentype") );
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Peristyle";
+  src: local("Peristyle"), url("./fonts/Peristyle/Peristyle-Medium.otf" format("opentype") );
+  font-weight: 500;
+}
+
+@font-face{
+  font-family: "Jatheedo";
+  src: local("Jatheedo"), url("./fonts/Jatheedo/Jatheedo.otf" format("opentype"));
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Mungo";
+  src: local("Mungo"), url("./fonts/Mungo/Mungo.otf" format("opentype"));
+  font-weight: normal;
 }

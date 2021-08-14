@@ -1,0 +1,15 @@
+
+.Navbar{
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(#e66465, #9198e5);
+}
+
+.NavBar__Sections{
+    list-style: none;
+}
+
+.BrandName{
+    font-family: "Mungo";
+    font-size: 1.5rem;
+}
