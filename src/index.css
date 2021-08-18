@@ -24,32 +24,40 @@ html{
    We'll see how it goes :O
 */
 
+
 @font-face {
-  font-family: "Peristyle";
-  src: local("Peristyle"), url("./fonts/Peristyle/Peristyle-Bold.otf" format("opentype") );
+  font-family: 'Peristyle';
+  src: local('Peristyle'), url(./fonts/Peristyle/Peristyle-Bold.otf) format('opentype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
   font-weight: 700;
 }
 
-@font-face{
-  font-family: "Peristyle";
-  src: local("Peristyle"), url("./fonts/Peristyle/Peristyle-Light.otf" format("opentype") );
+@font-face {
+  font-family: 'Peristyle';
+  src: local('Peristyle'), url(./fonts/Peristyle/Peristyle-Light.otf) format('opentype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
   font-weight: 200;
 }
 
 @font-face {
-  font-family: "Peristyle";
-  src: local("Peristyle"), url("./fonts/Peristyle/Peristyle-Medium.otf" format("opentype") );
+  font-family: 'Peristyle';
+  src: local('Peristyle'), url(./fonts/Peristyle/Peristyle-Medium.otf) format('opentype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
   font-weight: 500;
 }
 
+
 @font-face{
   font-family: "Jatheedo";
-  src: local("Jatheedo"), url("./fonts/Jatheedo/Jatheedo.otf" format("opentype"));
+  src: local("Jatheedo"), url(./fonts/Jatheedo/Jatheedo.otf) format('opentype');
   font-weight: normal;
 }
 
 @font-face {
   font-family: "Mungo";
-  src: local("Mungo"), url("./fonts/Mungo/Mungo.otf" format("opentype"));
+  src: local("Mungo"), url(./fonts/Mungo/Mungo.otf) format("opentype");
   font-weight: normal;
 }

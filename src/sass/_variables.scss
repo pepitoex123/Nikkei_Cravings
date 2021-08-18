@@ -1,0 +1,42 @@
+
+/*
+  Color variables!
+*/
+
+$main-bg: #FFFFFF;
+$navbar-bg: #F5F2ED;
+$main-color: #fe4f00;
+$secondary-color: #FF8133;
+$tertiary-color: #FF5E17;
+$cta-color: #FF4F00;
+$txt-main-color: #000;
+$txt-secondary-color: #8d8d8d;
+$txt-white: #fff;
+
+/*
+  Utility variables!
+*/
+
+$header-height: 17rem;
+$header-tablet-height: 7rem;
+$header-mobile-height: 4rem;
+$header-shrink-height: 7rem;
+
+$box-shadow: rgba(149,157,165,0.2) 0rem 0.8rem 2.4rem;
+
+$colors: (
+        "cta-orange": #FF4F00,
+        "light-orange": #FF8133,
+        "pink": #fe7e73,
+        "white": #fff,
+        "black": #000,
+        "main": $main-color
+);
+
+$mobile-width: 60rem;
+$tablet-width: 102.4rem;
+
+
+$numbers: (0,1,2,3,4,5,6,7,8);
+
+

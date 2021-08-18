@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import "normalize.css";
-import "./fonts/Peristyle/Peristyle-Light.otf";
-import "./fonts/Peristyle/Peristyle-Medium.otf";
-import "./fonts/Peristyle/Peristyle-Bold.otf";
-import "./fonts/Mungo/Mungo.otf";
-import "./fonts/Jatheedo/Jatheedo.otf";
 import './index.css';
-import App from './App';
+
+import "./media/boxicons-2.0.9/css/boxicons.min.css";
+
+import Layout from "./components/Layout";
+import "./sass/index.scss";
+
+
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <Layout/>
   </React.StrictMode>,
   document.getElementById('root')
 );

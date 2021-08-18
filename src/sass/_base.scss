@@ -1,0 +1,153 @@
+
+@import "./variables";
+@import "./mixins";
+@import "./animations";
+
+/*
+Solamente preferencia personal pero me gusta establecer el font-size a 10px, de esa manera trabajar con medidas REM es mucho más sencillo :O
+
+--------
+
+Just my personal preference, but I enjoy setting the font-size to 62.5% which is equal to 10px.
+This allows me to work with REM units way more efficiently :D
+
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-family: "Peristyle", sans-serif;
+  font-weight: 500;
+}
+
+ul{
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+  color: unset;
+}
+
+
+@each $color, $val in $colors {
+  .color-#{$color} {
+    color: $val;
+  }
+
+  .bg-#{$color}{
+    background-color: $val;
+  }
+}
+
+@each $var in $numbers{
+  .grid-col-#{$var} {
+    grid-template-columns: repeat($var,1fr);
+  }
+}
+
+@each $var in $numbers{
+  .grid-col-md-#{$var} {
+    @include tablet{
+      grid-template-columns: repeat($var,1fr);
+    }
+  }
+}
+
+
+
+@each $var in $numbers{
+  .grid-col-sm-#{$var} {
+    @include mobile{
+      grid-template-columns: repeat($var,1fr);
+    }
+  }
+}
+
+
+.container{
+  width: 100%;
+  max-width: 162rem;
+  padding: 0 5rem;
+  margin: auto;
+
+  @include tablet{
+    padding: 0 2rem;
+  }
+
+  @include mobile{
+    padding: 0 1rem;
+  }
+}
+
+.main{
+  margin-top: $header-height;
+  margin-bottom: 2rem;
+  min-height: 100vh;
+  @include tablet {
+    margin-top: calc(#{$header-tablet-height} + 2rem);
+  }
+  @include mobile {
+    margin-top: calc(#{$header-mobile-height} + 1rem);
+  }
+}
+
+
+
+/*
+   Quizás no utilice todos estas tipografías, pero de todas maneras me parecen bonitas y todavía no me puedo decidir :/
+
+   ---------------
+
+   Maybe I won´t end up using all these different fonts, but I find them very pretty and so I'm having a hard time choosing between them
+   We'll see how it goes :O
+*/
+
+
+@font-face {
+  font-family: 'Peristyle';
+  src: local('Peristyle'), url(./../fonts/Peristyle/Peristyle-Bold.otf) format('opentype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Peristyle';
+  src: local('Peristyle'), url(./../fonts/Peristyle/Peristyle-Light.otf) format('opentype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Peristyle';
+  src: local('Peristyle'), url(./../fonts/Peristyle/Peristyle-Medium.otf) format('opentype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+  font-weight: 500;
+}
+
+
+@font-face{
+  font-family: "Jatheedo";
+  src: local("Jatheedo"), url(./../fonts/Jatheedo/Jatheedo.otf) format('opentype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Mungo";
+  src: local("Mungo"), url(./../fonts/Mungo/Mungo.otf) format("opentype");
+  font-weight: normal;
+}
