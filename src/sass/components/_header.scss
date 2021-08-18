@@ -8,7 +8,6 @@
   height: $header-height;
   transition: height 0.3s;
 
-
   .container{
     height: 100%;
   }
@@ -77,23 +76,57 @@
 
     &__right{
       font-size: 2.25rem;
-
       &__item{
         @include flex(center,center);
-      }
-
-      @include tablet{
-        margin-left: auto;
-      }
-
-      @include mobile{
-        font-size: 1.2rem;
       }
     }
 
     &__left{
       padding: 50% 1.5rem 50% 1.5rem;
+      &__close{
+        display: none;
+      }
     }
   }
 
+}
+
+@media only screen and (max-width: $tablet-width){
+
+  .header{
+    &__menu{
+      &__left{
+        flex-direction: column;
+        background-color: #F5F2ED;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        justify-content: flex-start;
+        padding-top: 3rem;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease;
+        &.active{
+          transform: translateX(0);
+        }
+
+        &__item ~ &__item{
+          margin-left: unset;
+          margin-top: 2rem;
+        }
+
+        &__close{
+          display: block;
+          position: absolute;
+          left: 2rem;
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+  .header__menu__mobile-toggle{
+    display: block;
+    font-size: 2.5rem;
+  }
 }
