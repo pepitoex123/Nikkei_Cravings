@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import {Link} from "react-router-dom";
 
 import Helmet from "../components/Helmet";
@@ -13,6 +13,17 @@ import heroSliderData from "./../media/fake-data/hero-slider";
 import productData from "../media/fake-data/products";
 
 const Home = () => {
+
+    const [data,setData] = useState(null);
+
+    const dataHandler = () => {
+        let information = productData;
+        setData(information);
+    }
+
+    setTimeout(dataHandler,2000);
+
+
     return(
         <div>
             <Helmet title="Home Page">
@@ -41,9 +52,9 @@ const Home = () => {
                     <SectionBody>
                         <Grid col={4} mdCol={2} smCol={1} gap={2}>
                             {
-                                productData.getProducts(4).map((item,index) => (
+                                data ? data.getProducts(4).map((item,index) => (
                                     <ProductCard key={index} img01={item.image01} img02={item.image02} name={item.title} price={item.price} slug={item.slug}/>
-                                ))
+                                )) : ""
                             }
                         </Grid>
                     </SectionBody>
