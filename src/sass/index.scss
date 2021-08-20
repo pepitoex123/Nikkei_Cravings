@@ -1,5 +1,16 @@
+
+/* Base SCSS component */
+
 @import "./base";
 
+/* More Granular SCSS components used during the creation of Layout SCSS components */
+
+
+@import "./components/fancybutton";
+
+
+/* Layout SCSS components */
 
 @import "./components/header";
 @import "./components/footer";
+@import "./components/hero-slider";

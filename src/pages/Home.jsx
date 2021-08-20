@@ -10,7 +10,7 @@ const Home = () => {
         <div>
             <Helmet title="Home Page">
                 {/* Aquí se encuentra el Hero Slider - Here you can find the hero slider ^-^ */}
-                <HeroSlider data={heroSliderData}/>
+                <HeroSlider data={heroSliderData} control={true} auto={true} timeOut={5000}/>
                 {/* Aquí termina el Hero Slider - Here you can find the end of the hero slider ^-^ */}
             </Helmet>
         </div>

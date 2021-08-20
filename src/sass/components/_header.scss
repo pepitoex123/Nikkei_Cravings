@@ -17,6 +17,7 @@
     height: $header-shrink-height;
     box-shadow: $box-shadow;
     transition: height 0.3s;
+    z-index: 100;
   }
 
   &__logo{
