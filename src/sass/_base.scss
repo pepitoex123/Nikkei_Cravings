@@ -40,6 +40,10 @@ a{
   color: unset;
 }
 
+a:hover{
+  color: $main-color;
+}
+
 
 @each $color, $val in $colors {
   .color-#{$color} {
@@ -149,6 +153,12 @@ a{
 @font-face {
   font-family: "Mungo";
   src: local("Mungo"), url(./../fonts/Mungo/Mungo.otf) format("opentype");
+  font-weight: normal;
+}
+
+@font-face{
+  font-family: "Ungai";
+  src: local("Ungai"), url(./../fonts/Ungai/Ungai.otf) format("opentype");
   font-weight: normal;
 }
 

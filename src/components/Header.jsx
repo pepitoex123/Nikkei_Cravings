@@ -16,7 +16,7 @@ const mainNav = [
     },
     {
         display: "Products",
-        path: "/catalog"
+        path: "/products"
     },
     {
         display: "Our Makers",
