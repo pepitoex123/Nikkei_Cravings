@@ -13,7 +13,7 @@ import Routes from "../routes/Routes";
    The layout of the project
 */
 
-const Layout = () => {
+const App = () => {
     return(
         <BrowserRouter>
             <Route render={props => (
@@ -31,4 +31,4 @@ const Layout = () => {
     )
 }
 
-export default Layout
+export default App

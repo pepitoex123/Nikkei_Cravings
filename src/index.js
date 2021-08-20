@@ -5,7 +5,7 @@ import './index.css';
 
 import "./media/boxicons-2.0.9/css/boxicons.min.css";
 
-import Layout from "./components/Layout";
+import App from "./components/App";
 import "./sass/index.scss";
 
 
@@ -13,7 +13,7 @@ import "./sass/index.scss";
 
 ReactDOM.render(
   <React.StrictMode>
-      <Layout/>
+      <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
