@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 
 
 import FancyButton from "./FancyButton";
+import Button from "./Button";
 
 const HeroSlider = props => {
 
