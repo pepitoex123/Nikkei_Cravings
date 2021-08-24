@@ -12,6 +12,8 @@ import values from "../media/fake-data/values";
 import heroSliderData from "./../media/fake-data/hero-slider";
 import productData from "../media/fake-data/products";
 
+import banner from "../media/img/fake_banner.png";
+
 const Home = () => {
 
     const [data,setData] = useState(null);
@@ -35,8 +37,8 @@ const Home = () => {
                     <SectionBody>
                         <Grid col={4} mdCol={2} smCol={1} gap={2} >
                             {
-                                values.map((item,index) => ( <Link to="/our-values">
-                                        <ValuesCard key={index} name={item.name} description={item.description} icon={item.icon}/>
+                                values.map((item,index) => ( <Link key={index} to="/our-values">
+                                        <ValuesCard name={item.name} description={item.description} icon={item.icon}/>
                                 </Link>
                                 ))
                             }
@@ -53,13 +55,40 @@ const Home = () => {
                         <Grid col={4} mdCol={2} smCol={1} gap={2}>
                             {
                                 data ? data.getProducts(4).map((item,index) => (
-                                    <ProductCard key={index} img01={item.image01} img02={item.image02} name={item.title} price={item.price} slug={item.slug}/>
+                                    <ProductCard key={index} img01={item.image01} img02={item.image02} name={item.title} price={Number(item.price)} slug={item.slug}/>
                                 )) : ""
                             }
                         </Grid>
                     </SectionBody>
                 </Section>
                 {/* Aquí termina la sección de mejores productos - Here ends the section in regards to best products */}
+
+                {/* Aquí comienza la sección de anuncio falso - Here begins the section in regards to the fake ad */}
+                <Section>
+                    <SectionBody>
+                        <Link to="/products">
+                            <img className="banner" src={banner} alt=""/>
+                        </Link>
+                    </SectionBody>
+                </Section>
+                {/* Aquí termina la sección de anuncio falso - Here ends the section in regards to the fake ad */}
+
+                {/* Aquí comienza la sección de nuevos productos - Here starts the section in regards to new products */}
+                <Section>
+                    <SectionTitle>
+                        Our new and fresh products!
+                    </SectionTitle>
+                    <SectionBody>
+                        <Grid col={4} mdCol={2} smCol={1} gap={2}>
+                            {
+                                data ? data.getProducts(8).map((item,index) => (
+                                    <ProductCard key={index} img01={item.image01} img02={item.image02} name={item.title} price={Number(item.price)} slug={item.slug}/>
+                                )) : ""
+                            }
+                        </Grid>
+                    </SectionBody>
+                </Section>
+                {/* Aquí termina la sección de nuevos productos - Here ends the section in regards to new products */}
             </Helmet>
         </div>
     )

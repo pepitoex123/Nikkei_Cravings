@@ -7,26 +7,30 @@ import { Link } from "react-router-dom"
 import FancyButton from "./FancyButton";
 import Button from "./Button";
 
+import numberWithCommas from "../utils/numberWithCommas";
+
 const ProductCard = props => {
     return (
         <div className="product-card">
-            <Link>
+            <Link to={`/products/${props.slug}`}>
                 <div className="product-card__image">
                     <img src={props.img01} alt=""/>
                     <img src={props.img02} alt=""/>
                 </div>
                 <h3 className="product-card__name">{props.name}</h3>
                 <div className="product-card__price">
-                    {props.price}
+                    {numberWithCommas(props.price)}
                     <span className="product-card__price__old">
-                        <del>4000</del>
+                        <del>{numberWithCommas(399000)}</del>
                     </span>
                 </div>
             </Link>
             <div className="product-card__btn">
-                <FancyButton>
-                    Order Now!
-                </FancyButton>
+                <Link to={`/products/${props.slug}`}>
+                    <FancyButton>
+                        Order Now!
+                    </FancyButton>
+                </Link>
             </div>
         </div>
     )
