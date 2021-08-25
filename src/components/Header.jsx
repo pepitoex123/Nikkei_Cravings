@@ -39,13 +39,26 @@ const Header = () => {
 
     useEffect(() =>{
         window.addEventListener("scroll",() =>{
-            if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
+            if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80 || (window.innerWidth <= 1024)){
                 headerRef.current.classList.add("shrink");
             }else{
                 headerRef.current.classList.remove("shrink");
             }
             return () =>{
                 window.removeEventListener("scroll");
+            };
+        })
+    },[]);
+
+    useEffect(() =>{
+        window.addEventListener("resize",() =>{
+            if (window.matchMedia("(max-width: 1024px)").matches) {
+                headerRef.current.classList.add("shrink");
+            } else {
+                headerRef.current.classList.remove("shrink");
+            }
+            return () =>{
+                window.removeEventListener("resize");
             };
         })
     },[]);
@@ -57,11 +70,11 @@ const Header = () => {
     return(
         <div className="header" ref={headerRef}>
             <div className="container">
-                <div className="header__logo">
+                <p className="header__logo">
                     <Link to="/">
                         <img src={logo} alt="Nikkei Cravings Logo"/>
                     </Link>
-                </div>
+                </p>
                 <div className="header__menu">
                     <div className="header__menu__mobile-toggle" onClick={menuToggle}>
                         <i className="bx bx-menu-alt-left"></i>
