@@ -4,6 +4,8 @@ import {Link, useLocation} from "react-router-dom";
 
 import logo from "./../media/img/logonikkeicravings.png";
 
+import CartWidget from "./CartWidget";
+
 /*
    The header of the project
 
@@ -99,9 +101,7 @@ const Header = () => {
                             <i className="bx bx-search"></i>
                         </div>
                         <div className="header__menu__item header__menu__right__item">
-                            <Link to="/cart">
-                                <i className="bx bx-shopping-bag"></i>
-                            </Link>
+                            <CartWidget/>
                         </div>
                         <div className="header__menu__item header__menu__right__item">
                             <i className="bx bx-user"></i>

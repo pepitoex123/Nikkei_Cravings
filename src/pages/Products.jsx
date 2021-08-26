@@ -6,10 +6,32 @@ import ProductCard from "../components/ProductCard";
 import CheckBox from "../components/CheckBox";
 import FancyButton from "../components/FancyButton";
 
+import ItemListContainer from "../components/ItemListContainer";
+
 import productData from "../media/fake-data/products";
 import productsPage from "../media/fake-data/productsPage";
 
 const Products = () => {
+
+
+
+    // Fake useState, para simular un fetch hacia un servidor
+    let [productsToFetch,setProductsToFetch] = useState(null);
+
+    let myFakePromise = new Promise((resolve, reject) => {
+        setTimeout(function(){
+            resolve(productData.getAllProducts()); // ¡Todo salió bien!
+        }, 2000);
+    });
+
+
+    myFakePromise
+        .then((productData) => {
+
+            // Variable que nos permitirá guardar la información luego de llamar a la promesa! :D
+            setProductsToFetch(productData);
+        })
+
 
 
     const initFilter = {
@@ -17,9 +39,8 @@ const Products = () => {
     }
 
 
-    const productList = productData.getAllProducts()
 
-    const [products,setProducts] = useState(productList)
+    const [products,setProducts] = useState(productsToFetch)
 
     const [filter,setFilter] = useState(initFilter);
 
@@ -44,13 +65,13 @@ const Products = () => {
 
     const updateProducts = useCallback(
         () => {
-            let temp = productList
+            let temp = productsToFetch
             if(filter.category.length > 0){
                 temp = temp.filter(e => filter.category.includes(e.categorySlug))
             }
-            setProducts(temp);
+            setProductsToFetch(temp);
         },
-        [filter,productList]
+        [filter,productsToFetch]
     )
 
     useEffect(() => {
@@ -98,13 +119,9 @@ const Products = () => {
                         <FancyButton>Filter By</FancyButton>
                     </div>
                     <div className="products__content">
-                        <Grid col={3} mdCol={2} smCol={1} gap={2}>
                             {
-                                products.map((item,index) => (
-                                    <ProductCard key={index} img01={item.image01} img02={item.image02} name={item.title} price={Number(item.price)} slug={item.slug}/>
-                                ))
+                                productsToFetch ? <ItemListContainer products={productsToFetch}/> : ""
                             }
-                        </Grid>
                     </div>
                 </div>
             </Helmet>
