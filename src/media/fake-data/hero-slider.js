@@ -14,7 +14,7 @@ const heroSliderData = [
         title: "Sea Tasting",
         description: "Try out all our ingredients, straight out of the sea!",
         img: img2,
-        path: "/products/tasting",
+        path: "/products/sea-tasting",
         color: "blue"
     },
     {
