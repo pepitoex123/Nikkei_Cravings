@@ -79,6 +79,10 @@
       font-size: 2.25rem;
       &__item{
         @include flex(center,center);
+
+        &::after{
+          display: none;
+        }
       }
     }
 
@@ -131,4 +135,6 @@
     font-size: 2.5rem;
   }
 }
+
+
 
