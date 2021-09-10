@@ -8,10 +8,12 @@ const CartWidget = props => {
 
     return(
         <div>
-            <Link to="/cart">
-                <i className="bx bx-shopping-bag"></i>
-            </Link>
-            <span className={"counter"}>{counter}</span>
+            {
+                counter ? <Link to={"/cart"}><i className="bx bx-shopping-bag"></i></Link>  : ""
+            }
+            {
+                counter ? <span className={"counter"}>{counter}</span> : ""
+            }
         </div>
     )
 }

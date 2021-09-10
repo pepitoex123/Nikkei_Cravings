@@ -21,13 +21,30 @@ export const CartProvider = ({children}) => {
 
 
     const addProductToCart = (product,quantity) => {
-        let newCart = cart;
-        newCart.push({
-            ...product,
-            quantity: quantity,
-            totalForItem: this.price * this.quantity
-        })
+        let newCart = cart.map((prod) => {
+            if (product.id === prod.id) {
+                prod.quantity += quantity;
+            }
+            console.log(newCart)
+            return prod;
+        });
+        if (!newCart.some((prod) => prod.id === product.id)) {
+            newCart.push({
+                ...product,
+                quantity: quantity
+            });
+            console.log(newCart)
+        }
         setCart(newCart);
+    }
+
+    const deleteProductFromCart = (id,quantity) => {
+        setCart(cart.filter(prod => prod.id !== id))
+        setCounter(amountOfProductsCart() - quantity)
+    }
+
+    const amountOfProductsCart = () => {
+        return cart.reduce((acc,prod) => acc + prod.quantity,0)
     }
 
     const getTotalPrice = () => {
@@ -36,13 +53,14 @@ export const CartProvider = ({children}) => {
         for(let product of cart){
             totalPrice += product.totalForItem;
         }
+        console.log(totalPrice)
 
         return totalPrice;
     }
 
 
     return(
-        <CartContext.Provider value={{cart,setCart,addProductToCart,getTotalPrice,clearCart}}>
+        <CartContext.Provider value={{cart,setCart,addProductToCart,getTotalPrice,clearCart,deleteProductFromCart,amountOfProductsCart}}>
             {children}
         </CartContext.Provider>
     );
