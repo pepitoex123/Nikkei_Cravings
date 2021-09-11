@@ -69,27 +69,35 @@ export const Checkout = () => {
 
                     <div>
                         <form onSubmit={handleSubmit} className="checkout__form">
+                            <label htmlFor="name">Name</label>
                             <input
                                 type="text"
                                 value={values.name}
                                 onChange={handleInputChange}
                                 name="name"
+                                id="name"
                                 required
                             />
+                            <label htmlFor="tel">Telephone</label>
                             <input
                                 type="tel"
                                 value={values.tel}
                                 onChange={handleInputChange}
                                 name="tel"
+                                id="tel"
                                 required
                             />
+                            <label htmlFor="email">Email</label>
                             <input
                                 type="email"
                                 value={values.email}
                                 onChange={handleInputChange}
                                 name="email"
+                                id="email"
                                 required
                             />
+                            <label htmlFor="confirmEmail">Confirm Email</label>
+                            <input type="email" id="confirmEmail"/>
                             <button type="submit">Submit</button>
                         </form>
                     </div>
