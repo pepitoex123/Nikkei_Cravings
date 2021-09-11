@@ -8,14 +8,14 @@ An e-commerce app for nikkei/japanese food!
 - Build an e-commerce app from scratch / Construir una app e-commerce desde cero
 - Establish a good responsive design / Establecer un buen diseño responsivo
 
-### Dependencies/Dependencias
+## Dependencies/Dependencias
 
--firebase
--node-sass
--react
--normalize.css
--sweetalert2
--react-router-dom
+- firebase
+- node-sass
+- react
+- normalize.css
+- sweetalert2
+- react-router-dom
 
 ### Watch the app in action!
 
