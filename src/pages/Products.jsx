@@ -10,6 +10,8 @@ import productData from "../media/fake-data/products";
 import productsPage from "../media/fake-data/productsPage";
 
 import {getFirestore} from "../firebase/config";
+import {Loader} from "../components/Loader";
+
 
 const Products = () => {
     const initFilter = {
@@ -121,7 +123,7 @@ const Products = () => {
                         {productsToFetch ? (
                             <ItemListContainer products={productsToFetch} />
                         ) : (
-                            ""
+                            <Loader/>
                         )}
                     </div>
                 </div>
