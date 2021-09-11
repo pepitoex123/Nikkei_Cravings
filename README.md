@@ -10,12 +10,12 @@ An e-commerce app for nikkei/japanese food!
 
 ### Dependencies/Dependencias
 
-+firebase
-+node-sass
-+react
-+normalize.css
-+sweetalert2
-+react-router-dom
+-firebase
+-node-sass
+-react
+-normalize.css
+-sweetalert2
+-react-router-dom
 
 ### Watch the app in action!
 
