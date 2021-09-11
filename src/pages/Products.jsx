@@ -16,26 +16,14 @@ const Products = () => {
         category: [],
     };
 
-    // Fake useState, para simular un fetch hacia un servidor
+
+
+
+    
     let [productsToFetch, setProductsToFetch] = useState(null);
     const [filter, setFilter] = useState(initFilter);
 
-    useEffect(() => {
-        let myFakePromise = new Promise((resolve, reject) => {
-            setTimeout(function () {
-                resolve(productData.getAllProducts()); // ¡Todo salió bien!
-            }, 1200);
-        });
 
-        myFakePromise.then((productData) => {
-            let temp = productData;
-            if (filter.category.length > 0) {
-                temp = temp.filter((e) => filter.category.includes(e.categorySlug));
-            }
-            // Variable que nos permitirá guardar la información luego de llamar a la promesa! :D
-            setProductsToFetch(temp);
-        });
-    }, [filter]);
 
     useEffect(() => {
         const db = getFirestore();
@@ -48,7 +36,7 @@ const Products = () => {
                     setProductsToFetch(productData)
                 })
         }else if(filter.category.length > 0){
-            const databaseFilter = products.where("categorySlug", "array-contains-any",filter.category)
+            const databaseFilter = products.where("categorySlug", "in",filter.category)
             databaseFilter.get()
                 .then((response) => {
                     const productData = response.docs.map((doc) => ({...doc.data(),id: doc.id}))

@@ -30,7 +30,7 @@ const mainNav = [
     }
 ]
 
-const Header = () => {
+const Navbar = () => {
 
 
     const {pathname} = useLocation();
@@ -113,4 +113,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default Navbar

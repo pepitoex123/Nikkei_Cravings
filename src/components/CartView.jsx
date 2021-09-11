@@ -2,6 +2,7 @@ import React,{useContext,useEffect,useState} from "react";
 import {SectionTitle,SectionBody} from "./Section";
 import {CartContext} from "../Contexts/CartContext";
 import FancyButton from "./FancyButton";
+import {Link} from "react-router-dom";
 
 const CartView = () => {
 
@@ -34,9 +35,13 @@ const CartView = () => {
                         Empty Cart!
                     </FancyButton>
                 </div>
-                <FancyButton>
-                    Check Out!
-                </FancyButton>
+                <div>
+                    <Link to="/checkout">
+                        <FancyButton>
+                            Check Out!
+                        </FancyButton>
+                    </Link>
+                </div>
             </SectionBody>
         </div>
     )

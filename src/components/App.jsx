@@ -2,7 +2,7 @@ import React,{useState} from "react";
 
 import {BrowserRouter, Route} from "react-router-dom";
 
-import Header from "./Header";
+import Navbar from "./Navbar";
 
 import Footer from "./Footer";
 
@@ -25,7 +25,7 @@ const App = () => {
                     <Route render={props => (
                         <div>
                             <div className="container">
-                                <Header{...props}/>
+                                <Navbar{...props}/>
                                 <div className="main">
                                     <Routes/>
                                 </div>

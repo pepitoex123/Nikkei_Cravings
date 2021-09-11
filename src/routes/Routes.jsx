@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import Products from "../pages/Products";
 import Cart from "../pages/Cart";
 import Product from "../pages/Product";
+import Checkout from "../components/Checkout";
 
 const Routes = () => {
     return(
@@ -14,6 +15,7 @@ const Routes = () => {
             <Route path="/products/:slug" component={Product}/>
             <Route path="/products" component={Products}/>
             <Route path="/cart" component={Cart}/>
+            <Route path="/checkout" component={Checkout}/>
         </Switch>
     )
 }
