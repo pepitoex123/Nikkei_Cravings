@@ -19,3 +19,5 @@ An e-commerce app for nikkei/japanese food!
 
 ### Watch the app in action!
 
+​
+![Nikkei Cravings En Funcionamiento](https://github.com/pepitoex123/Nikkei_Cravings/blob/main/chrome-capture.gif)
