@@ -7,7 +7,7 @@ const CartView = () => {
 
     const {cart,setCart,addProductToCart,getTotalPrice,clearCart,amountOfProductsCart,deleteProductFromCart} = useContext(CartContext)
 
-    
+
 
 
 

@@ -6,12 +6,32 @@ import {Link, useLocation} from "react-router-dom";
 import {CounterContext} from "../Contexts/CounterContext";
 import {CartContext} from "../Contexts/CartContext";
 import ItemCount from "./ItemCount";
+import {getFirestore} from "../firebase/config";
 
 
 const ProductView = props => {
 
+
     const product = props.product
-    console.log(product.price)
+
+
+    //const [product, setProduct] = useState(null)
+
+
+    /*
+    useEffect(() => {
+        const db = getFirestore()
+        const products = db.collection("productos")
+        const product = products.doc(id)
+
+        product.get()
+            .then((doc) => {
+                setProduct({...doc.data(),id: doc.id})
+            })
+    })
+
+     */
+
 
 
     const [previewImg,setPreviewImg] = useState(product.image01)
@@ -85,7 +105,7 @@ const ProductView = props => {
                     <h1 className="product__info__title">{product.title}</h1>
                     <div className="product__info__item">
                         <span className="product__info__item__price">
-                            {numberWithCommas(product.price)}
+                            { product ? numberWithCommas(product.price) : ""}
                         </span>
                     </div>
                     <ItemCount updateQuantity={updateQuantity} quantity={quantity} setQuantity={setQuantity} />

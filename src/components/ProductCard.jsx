@@ -10,6 +10,9 @@ import Button from "./Button";
 import numberWithCommas from "../utils/numberWithCommas";
 
 const ProductCard = props => {
+
+
+
     return (
         <div className="product-card">
             <Link to={`/products/${props.slug}`}>

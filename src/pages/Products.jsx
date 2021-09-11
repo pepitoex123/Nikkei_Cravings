@@ -9,6 +9,8 @@ import ItemListContainer from "../components/ItemListContainer";
 import productData from "../media/fake-data/products";
 import productsPage from "../media/fake-data/productsPage";
 
+import {getFirestore} from "../firebase/config";
+
 const Products = () => {
     const initFilter = {
         category: [],
@@ -22,7 +24,7 @@ const Products = () => {
         let myFakePromise = new Promise((resolve, reject) => {
             setTimeout(function () {
                 resolve(productData.getAllProducts()); // ¡Todo salió bien!
-            }, 2000);
+            }, 1200);
         });
 
         myFakePromise.then((productData) => {
@@ -34,6 +36,26 @@ const Products = () => {
             setProductsToFetch(temp);
         });
     }, [filter]);
+
+    useEffect(() => {
+        const db = getFirestore();
+        const products = db.collection("productos")
+        if(filter.category.length === 0){
+            products.get()
+                .then((response) => {
+                    const productData = response.docs.map((doc) => ({...doc.data(),id: doc.id}))
+                    console.log(productData)
+                    setProductsToFetch(productData)
+                })
+        }else if(filter.category.length > 0){
+            const databaseFilter = products.where("categorySlug", "array-contains-any",filter.category)
+            databaseFilter.get()
+                .then((response) => {
+                    const productData = response.docs.map((doc) => ({...doc.data(),id: doc.id}))
+                    setProductsToFetch(productData)
+                })
+        }
+    },[filter])
 
     const filterSelect = (type, checked, item) => {
         if (checked) {
