@@ -6,7 +6,7 @@ import {Link, useLocation} from "react-router-dom";
 import {CounterContext} from "../Contexts/CounterContext";
 import {CartContext} from "../Contexts/CartContext";
 import ItemCount from "./ItemCount";
-import {getFirestore} from "../firebase/config";
+
 
 
 const ProductView = props => {
@@ -15,22 +15,6 @@ const ProductView = props => {
     const product = props.product
 
 
-    //const [product, setProduct] = useState(null)
-
-
-    /*
-    useEffect(() => {
-        const db = getFirestore()
-        const products = db.collection("productos")
-        const product = products.doc(id)
-
-        product.get()
-            .then((doc) => {
-                setProduct({...doc.data(),id: doc.id})
-            })
-    })
-
-     */
 
 
 
@@ -43,7 +27,7 @@ const ProductView = props => {
 
     const {counter,setCounter} = useContext(CounterContext)
 
-    const {cart,setCart,addProductToCart,getTotalPrice,clearCart} = useContext(CartContext)
+    const {addProductToCart} = useContext(CartContext)
 
     let quantityToInput = 1;
 
